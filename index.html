@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>Data K-pop</title>
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            width: 200px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+            background-color: #f5f5dc;
+        }
+        .card h3 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .card p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daftar Grup K-pop</h1>
+    <div class="card-container">
+        {% for group in kpop_groups %}
+        <div class="card">
+            <h3>{{ group['Nama Grup'] }}</h3>
+            <p><strong>Genre Musik:</strong> {{ group['Genre Musik'] }}</p>
+            <p><strong>Tahun Debut:</strong> {{ group['Tahun Debut'] }}</p>
+            <p><strong>Agensi:</strong> {{ group['Agensi'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Rata-rata Tahun Debut Grup K-pop: {{ average_debut }}</h2>
+    <h2>Median Tahun Debut: {{ median_debut }}</h2>
+    <h2>Standar Deviasi Tahun Debut: {{ std_debut }}</h2>
+    <h2>Cumulative Sum Tahun Debut: {{ cumulative_sum }}</h2>
+</body>
+</html>
